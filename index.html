@@ -1,0 +1,209 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CommunHub</title>
+    <style>
+        /* Your CSS styles here */
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <h1>CommunHub</h1>
+            <p>Your platform for seamless event planning and community engagement</p>
+        </div>
+    </header>
+    <section class="features container">
+        <div class="feature">
+            <h2>Create Events</h2>
+            <p>Effortlessly create and manage events with our user-friendly platform.</p>
+        </div>
+        <div class="feature">
+            <h2>Connect and Engage</h2>
+            <p>Build connections and engage with your community through memorable events.</p>
+        </div>
+        <div class="feature">
+            <h2>Promote Your Events</h2>
+            <p>Reach a wider audience by promoting your events on our integrated social media platform.</p>
+        </div>
+    </section>
+    <section class="call-to-action container">
+        <p>Join CommunHub today and start creating unforgettable experiences!</p>
+        <form id="registrationForm">
+            <label for="username">Username:</label>
+            <input type="text" id="username" name="username" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <button type="button" onclick="registerUser()">Join Now</button>
+        </form>
+        <div id="registeredUsers">
+            <h3>Registered Users</h3>
+            <ul id="userList"></ul>
+        </div>
+    </section>
+    <script>
+        // Array to store registered users
+        const users = [];
+
+        // Function to handle the "Join Now" button click
+        function registerUser() {
+            location.href="login.html"
+            const usernameInput = document.getElementById('username');
+            const emailInput = document.getElementById('email');
+
+            //const username = usernameInput.value;
+            //const email = emailInput.value;
+
+            // Validate if the fields are not empty
+            if (username.trim() === '' || email.trim() === '') {
+                alert('Please fill in all the fields.');
+                return;
+            }
+
+            // Create a user object
+            const user = { username, email };
+
+            // Add the user to the array
+            users.push(user);
+
+            // Display the registered users
+            displayRegisteredUsers();
+
+            // Clear the form fields
+            usernameInput.value = '';
+            emailInput.value = '';
+            
+
+            // Optionally, you can now send the user data to a server for further processing.
+        }
+
+        // Function to display registered users
+        function displayRegisteredUsers() {
+            const userListElement = document.getElementById('userList');
+
+            // Clear the previous list
+            userListElement.innerHTML = '';
+
+            // Populate the list with registered users
+            users.forEach(user => {
+                const listItem = document.createElement('li');
+                listItem.textContent = `${user.username} - ${user.email}`;
+                userListElement.appendChild(listItem);
+            });
+        }
+
+        // Attach the registerUser function to the click event of the "Join Now" button
+        document.addEventListener('DOMContentLoaded', function () {
+            const joinNowButton = document.getElementById('joinNowButton');
+            joinNowButton.addEventListener('click', registerUser);
+        });
+    </script>
+</body>
+</html>
+<style>
+/* Global Styles */
+body {
+    font-family: 'Arial', sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+}
+
+.container {
+    width: 80%;
+    margin: 0 auto;
+}
+
+/* Header Styles */
+header {
+    background-color: #3498db;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* Features Section Styles */
+.features {
+    display: flex;
+    justify-content: space-around;
+    padding: 50px 0;
+}
+
+.feature {
+    text-align: center;
+    max-width: 300px;
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease-in-out;
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+}
+
+/* Call-to-Action Section Styles */
+.call-to-action {
+    background-color: #2ecc71;
+    color: #fff;
+    text-align: center;
+    padding: 50px 0;
+}
+
+/* Registration Form Styles */
+form {
+    max-width: 400px;
+    margin: 0 auto;
+}
+
+label {
+    display: block;
+    margin-bottom: 10px;
+    color: #fff;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 20px;
+    box-sizing: border-box;
+    border: 1px solid #3498db;
+    border-radius: 5px;
+}
+
+button {
+    padding: 10px 20px;
+    font-size: 16px;
+    cursor: pointer;
+    background-color: #fff;
+    color: #3498db;
+    border: none;
+    border-radius: 5px;
+    transition: background-color 0.3s ease-in-out, color 0.3s ease-in-out;
+}
+
+button:hover {
+    background-color: #3498db;
+    color: #fff;
+}
+
+/* Registered Users Styles */
+#registeredUsers {
+    margin-top: 20px;
+}
+
+#userList {
+    list-style: none;
+    padding: 0;
+}
+
+#userList li {
+    margin-bottom: 10px;
+    color: #333;
+}
+</style>

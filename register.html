@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+        }
+
+        nav ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+        }
+
+        nav li {
+            margin-right: 20px;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #fff;
+            font-weight: bold;
+            transition: color 0.3s ease;
+        }
+
+        nav a:hover {
+            color: #ddd;
+        }
+
+        section {
+            padding: 50px 20px;
+            text-align: center;
+        }
+
+        form {
+            max-width: 600px;
+            margin: 0 auto;
+            background: #fff;
+            padding: 20px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        form label {
+            display: block;
+            margin-bottom: 8px;
+            color: #555;
+        }
+
+        form input,
+        form textarea,
+        form select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            transition: border-color 0.3s ease;
+        }
+
+        form input:focus,
+        form textarea:focus,
+        form select:focus {
+            border-color: #4CAF50;
+        }
+
+        form button {
+            background-color: #4CAF50;
+            color: #fff;
+            padding: 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+
+        form button:hover {
+            background-color: #45a049;
+        }
+
+        footer {
+            background-color: #4CAF50;
+            color: #fff;
+            text-align: center;
+            padding: 1em 0;
+            position: fixed;
+            bottom: 0;
+            width: 100%;
+        }
+    </style>
+    <title>Events Management</title>
+</head>
+<body>
+    <header>
+        <h1>Events Management</h1>
+        <nav>
+            <ul>
+                <li><a href="#home">Home</a></li>
+                <li><a href="#events">Events</a></li>
+                <li><a href="#services">Services</a></li>
+                <li><a href="#contact">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <section id="contact">
+        <h2>Contact Us</h2>
+        <p>For inquiries and event planning services, register below:</p>
+        <form action="submit_registration.php" method="post">
+            <label for="name">Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="event">Event:</label>
+            <select id="event" name="event" required>
+                <option value="Event 1">Event 1</option>
+                <option value="Event 2">Event 2</option>
+                <!-- Add more events as needed -->
+            </select>
+
+            <label for="message">Additional Message (if any):</label>
+            <textarea id="message" name="message" rows="4"></textarea>
+
+            <button type="submit" onclick="reg()">Register</button>
+        </form>
+    </section>
+
+    <footer>
+        <p>&copy; 2023 Events Management. All rights reserved.</p>
+    </footer>
+</body>
+</html>
+<script>
+function reg(){
+    alert("SUCESSFULLY REGISTERED")
+}
+</script>
